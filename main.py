@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import os
-import subprocess
 
 load_dotenv()
 
@@ -17,4 +16,4 @@ for filename in os.listdir(FOLDER_PATH):
         
         print('Print file:', filename)
         
-        subprocess.run(["-lp", "-d", PRINTER, filepath])
+        os.system(f"lp -d {PRINTER} {filepath}")
